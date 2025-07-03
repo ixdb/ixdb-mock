@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ixdb-mock - Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛠️ ixdb-mock Server</h1>
+            <p>通过此界面管理你的模拟 API 接口。</p>
+        </header>
+
+        <main>
+            <section class="card form-card">
+                <h2>创建新接口</h2>
+                <form id="create-mock-form">
+                    <div class="form-group">
+                        <label for="mock-path">接口路径 (例如: user/info)</label>
+                        <input type="text" id="mock-path" placeholder="user/info" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>返回格式</label>
+                        <select id="mock-format">
+                            <option value="json" selected>JSON</option>
+                            <option value="xml" disabled>XML (待实现)</option>
+                            <option value="yaml" disabled>YAML (待实现)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>JSON 属性</label>
+                        <div id="json-properties">
+                            </div>
+                        <button type="button" id="add-property-btn" class="btn btn-secondary">+ 添加属性</button>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">创建接口</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>已有的模拟接口</h2>
+                <div id="mock-list-container">
+                    <ul id="mock-list">
+                        </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>ixdb-mock Project</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
